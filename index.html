@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Modélisation de base de données</h2>
+				</section>
+				<section>
+					<p>Quand avons nous besoin d'une base de données et inversement ?</p>
+				</section>
+				<section>
+					<p>Pas de base de données</p>
+					<a href="https://syllabes-app.vercel.app/">
+						<img src="ressources/syllabe.png" alt="">
+					</a>
+				</section>
+				<section>
+					<p>Base de données</p>
+					<a href="https://inspir-on.com/">
+						<img src="ressources/inspiron.png" alt="">
+					</a>
+				</section>
+				<section>
+					<section>
+						<p>2 types de base de données</p>
+						<p>SQL VS NoSQL</p>
+					</section>
+					<section>
+						<p>SQL = Structure Query Language</p>
+						<p>Super pour les projets déjà bien défini et structurés</p>
+					</section>
+					<section>
+						<p>NoSQL = Not Only Structure Query Language</p>
+						<p>Super pour les projets en lancement</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>La méthode MERISE</h3>
+					</section>
+					<section>
+						<p>MCD -> MLD -> MPD</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>MCD (Modélisation conceptuel de données)</p>
+						<img src="ressources/MCD.png" alt="">
+					</section>
+					<section>
+						<p>Entité et Attributs</p>
+						<img src="ressources/MCD2.png" alt="">
+					</section>
+					<section>
+						<h3>Association et cardinalités</h3>
+						<p>Association = Verbe à l'infinitif</p>
+						<p>Cardinalité = 0 (zéro), 1 (un) et n (plusieurs)</p>
+						<img src="ressources/MCD2a.png" alt="">
+					</section>
+					<section>
+						<p>Pas de "n"</p>
+						<img src="ressources/MCD3.png" alt="">
+						<p>Un Client <b>dispose</b> de 0 ou 1 Avatar</p>
+						<p>Un Avatar <b>est disposé</b> par 1 ou 1 Client</p>
+					</section>
+					<section>
+						<p>Un "n" d'un seul côté</p>
+						<img src="ressources/MCD4.png" alt="">
+						<p>Un Client <b>poste</b> 0 ou n Commentaire</p>
+						<p>Un Commentaire <b>est posté</b> par 1 Client</p>
+					</section>
+					<section>
+						<p>"n" de chaque côté</p>
+						<img src="ressources/MCD5.png" alt="">
+						<p>Un Client <b>achète</b> 1 ou n Produit</p>
+						<p>Un Produit <b>est achetéé</b> par 1 ou n Client</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>MLD (Modélisation logique de données)</p>
+						<img src="ressources/MLD.png" alt="">
+					</section>
+					<section>
+						<p>Que s'est-il passé ?</p>
+					</section>
+					<section>
+						<p>pas de "n" = fusion des entités</p>
+						<p>un "n" d'un côté = ajout d'une clé étrangère</p>
+						<p>un "n" de chaque côté = création d'une table de liaison</p>
+					</section>
+					<section>
+						<p>Pas de "n"</p>
+						<img src="ressources/MLD1.png" alt="">
+					</section>
+					<section>
+						<p>Un "n" d'un côté</p>
+						<img src="ressources/MLD2.png" alt="">
+						<p>PK = Clé primaire</p>
+						<p>FK = Clé étrangère</p>
+					</section>
+					<section>
+						<p>Un "n" de chaque côté</p>
+						<img src="ressources/MLD3.png" alt="">
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>MPD (Modélisation physique de données)</p>
+						<img src="ressources/MPD.png" alt="">
+					</section>
+					<section>
+						<p>Les types :</p>
+						<p>INT, VARCHAR, DATE, TEXT, etc.</p>
+					</section>
+					<section>
+						<p>Les contraintes :</p>
+						<p>PRIMARY KEY, FOREIGN KEY, NOT NULL, UNIQUE, …</p>
+					</section>
+				</section>
+				<section>
+					<p>Présenter son MCD/MLD/MPD</p>
+					<ul>
+						<li>
+							<a href="https://excalidraw.com/">Excalidraw</a>
+						</li>
+						<li>
+							<a href="https://dbdiagram.io/">DB diagram</a>
+						</li>
+						<li>
+							<a href="https://app.diagrams.net/">Diagram</a>				
+						</li>
+						<li>
+							<a href="https://www.lucidchart.com/">Lucidchart</a>			
+						</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
